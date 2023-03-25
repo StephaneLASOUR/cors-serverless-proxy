@@ -1,0 +1,44 @@
+{
+  "cSpell.words": [
+    "Kapix"
+  ],
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.localesPaths": "locales",
+  "i18n-ally.sortKeys": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "prettier.enable": false,
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.associations": {
+    "*.css": "postcss"
+  },
+  "editor.formatOnSave": false,
+  "workbench.colorCustomizations": {
+    "activityBar.foreground": "#FFFFFF",
+    "activityBar.activeBorder": "#ffc107",
+    "activityBar.background": "#783a5a",
+    "activityBar.activeForeground": "#FFFFFF",
+    "activityBar.activeBackground": "#783a5a",
+    "titleBar.activeForeground": "#FFFFFF",
+    "titleBar.activeBackground": "#783a5a"
+  },
+  "files.exclude": {
+    "**/node_modules": false,
+    "tsconfig.json": false,
+    "pnpm-lock.yaml": true,
+    ".gitignore": false,
+    ".eslintignore": false,
+    ".eslintrc.js": false,
+    ".babelrc": false,
+    ".editorconfig": false,
+    ".postcssrc.js": false,
+    ".jshintrc": false,
+    "yarn.lock": false,
+    ".npmrc": false,
+    "build": true,
+    "config": true
+  },
+  "i18n-ally.sourceLanguage": "fr"
+}

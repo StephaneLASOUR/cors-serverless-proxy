@@ -1,21 +1,46 @@
+org: sparda
 service: cors-proxy
+configValidationMode: error
 
-frameworkVersion: ">=1.1.0 <2.0.0"
+custom:
+  serverless-offline:
+    noPrependStageInUrl: true
 
 provider:
   name: aws
-  runtime: nodejs12.x
-  stage: dev
-  region: ap-south-1
-
-plugins:
-  - serverless-offline #serverless-offline needs to be last in the list
-
+  runtime: nodejs18.x
+  stage: production
+  region: eu-central-1
 
 functions:
   app:
-    handler: index.handler
+    handler: app.handler
+    timeout: 60
+    description: CORS handler
     events:
       - http:
-          path: /
+          path: /proxy
           method: ANY
+          cors:
+            origins:
+              - http://localhost:8081
+              - https://studio.kapix.fr
+              - https://studio-business.kapix.fr
+            allowCredentials: false
+
+package:
+  patterns:
+    - 'node_modules/**/*'
+    - '!node_modules/serverless-offline'
+    - '!node_modules/serverless'
+    - '!node_modules/.pnpm'
+    - '!node_modules/.bin'
+    - '!node_modules/.modules.yaml'
+    - '!node_modules/typescript'
+    - '!README.md'
+    - '!pnpm-lock.yaml'
+    - '!package-lock.json'
+    - '!.vscode'
+
+plugins:
+  - serverless-offline #serverless-offline needs to be last in the list

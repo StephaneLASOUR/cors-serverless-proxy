@@ -1,0 +1,75 @@
+{
+  "overrides": [
+    {
+      "files": [
+        "*.vue"
+      ],
+      "parser": "vue-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser"
+      },
+      "rules": {
+        "no-unused-vars": "error",
+        "no-undef": "off",
+        "@typescript-eslint/no-unused-vars": "off"
+      }
+    }
+  ],
+  "extends": [
+    "plugin:vue/vue3-recommended",
+    "@antfu/eslint-config-ts"
+  ],
+  "rules": {
+    "yml/no-irregular-whitespace": "off",
+    "no-irregular-whitespace": "off",
+    "no-trailing-spaces": "error",
+    "antfu/if-newline": "off",
+    "vue/multi-word-component-names": "off",
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/prefer-ts-expect-error": "off",
+    "@typescript-eslint/ban-ts-comment": [
+      2,
+      {
+        "ts-expect-error": false,
+        "ts-ignore": false,
+        "ts-nocheck": false,
+        "ts-check": false,
+        "minimumDescriptionLength": 0
+      }
+    ],
+    "@typescript-eslint/space-before-function-paren":  [
+      "error",
+      {
+        "anonymous": "never",
+        "named": "always"
+      }
+    ],
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "never",
+        "named": "always"
+      }
+    ],
+    "operator-linebreak": [
+      "warn",
+      "before"
+    ],
+    "@typescript-eslint/comma-dangle": [
+      "error",
+      "never"
+    ],
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "curly": "off",
+    "vue/attribute-hyphenation": "off",
+    "vue/component-name-in-template-casing": "off",
+    "vue/html-closing-bracket-newline": "off",
+    "vue/return-in-computed-property": "off",
+    "vue/html-self-closing": "off",
+    "vue/no-v-html": "off",
+    "no-use-before-define": "off"
+  }
+}
