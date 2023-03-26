@@ -24,10 +24,10 @@ const corsOptions = {
   }
 }
 
-// app.use(cors(corsOptions))
-app.use(cors({
-	origin: '*',
-}))
+app.use(cors(corsOptions))
+// app.use(cors({
+// 	origin: '*',
+// }))
 
 const headersToPass = [
 	'Content-type',

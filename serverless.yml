@@ -15,7 +15,7 @@ provider:
 functions:
   app:
     handler: app.handler
-    timeout: 60
+    timeout: 30
     description: CORS handler
     events:
       - http:
@@ -33,7 +33,7 @@ package:
     - 'node_modules/**/*'
     - '!node_modules/serverless-offline'
     - '!node_modules/serverless'
-    - '!node_modules/.pnpm'
+    - '!node_modules/.pnpm/@aws*'
     - '!node_modules/.bin'
     - '!node_modules/.modules.yaml'
     - '!node_modules/typescript'

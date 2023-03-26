@@ -1,132 +1,24 @@
 lockfileVersion: 5.4
 
 specifiers:
-  accepts: ~1.3.8
-  array-flatten: 1.1.1
-  asynckit: ^0.4.0
   axios: ^1.3.4
-  body-parser: ^1.20.2
-  call-bind: ^1.0.0
-  combined-stream: ^1.0.8
-  content-disposition: 0.5.4
-  content-type: ~1.0.4
-  cookie: 0.5.0
-  cookie-signature: 1.0.6
   cors: ^2.8.5
-  debug: ^4.3.4
-  delayed-stream: ^1.0.0
-  depd: ^2.0.0
-  ee-first: ^1.1.1
-  encodeurl: ^1.0.2
-  escape-html: ~1.0.3
-  etag: ~1.8.1
   express: ^4.18.2
-  finalhandler: ^1.2.0
-  follow-redirects: ^1.15.2
-  form-data: ^4.0.0
-  forwarded: 0.2.0
-  fresh: 0.5.2
-  function-bind: ^1.1.1
-  get-intrinsic: ^1.2.0
-  has: ^1.0.3
-  has-symbols: ^1.0.3
-  http-errors: 2.0.0
-  inherits: ^2.0.4
-  ipaddr.js: 1.9.1
-  merge-descriptors: ^1.0.1
-  methods: ~1.1.2
-  mime-db: ^1.52.0
-  mime-types: ^2.1.35
-  ms: ^2.1.3
-  object-assign: ^4.1.1
-  object-inspect: ^1.9.0
-  on-finished: 2.4.1
-  parseurl: ~1.3.3
-  path-to-regexp: 0.1.7
-  proxy-addr: ~2.0.7
-  proxy-from-env: ^1.1.0
-  qs: 6.11.0
-  range-parser: ~1.2.1
-  safe-buffer: 5.2.1
-  send: 0.18.0
   serve: ^12.0.0
-  serve-static: 1.15.0
   serverless: ^3.29.0
   serverless-http: ^3.2.0
   serverless-offline: ^12.0.4
-  setprototypeof: 1.2.0
-  side-channel: ^1.0.4
-  statuses: 2.0.1
-  toidentifier: 1.0.1
-  type-is: ~1.6.18
   typescript: ^5.0.2
-  unpipe: ~1.0.0
-  utils-merge: 1.0.1
-  vary: ~1.1.2
 
 dependencies:
-  accepts: 1.3.8
-  array-flatten: 1.1.1
-  asynckit: 0.4.0
-  axios: 1.3.4_debug@4.3.4
-  body-parser: 1.20.2
-  call-bind: 1.0.2
-  combined-stream: 1.0.8
-  content-disposition: 0.5.4
-  content-type: 1.0.5
-  cookie: 0.5.0
-  cookie-signature: 1.0.6
+  axios: 1.3.4
   cors: 2.8.5
-  debug: 4.3.4
-  delayed-stream: 1.0.0
-  depd: 2.0.0
-  ee-first: 1.1.1
-  encodeurl: 1.0.2
-  escape-html: 1.0.3
-  etag: 1.8.1
   express: 4.18.2
-  finalhandler: 1.2.0
-  follow-redirects: 1.15.2_debug@4.3.4
-  form-data: 4.0.0
-  forwarded: 0.2.0
-  fresh: 0.5.2
-  function-bind: 1.1.1
-  get-intrinsic: 1.2.0
-  has: 1.0.3
-  has-symbols: 1.0.3
-  http-errors: 2.0.0
-  inherits: 2.0.4
-  ipaddr.js: 1.9.1
-  merge-descriptors: 1.0.1
-  methods: 1.1.2
-  mime-db: 1.52.0
-  mime-types: 2.1.35
-  ms: 2.1.3
-  object-assign: 4.1.1
-  object-inspect: 1.12.3
-  on-finished: 2.4.1
-  parseurl: 1.3.3
-  path-to-regexp: 0.1.7
-  proxy-addr: 2.0.7
-  proxy-from-env: 1.1.0
-  qs: 6.11.0
-  range-parser: 1.2.1
-  safe-buffer: 5.2.1
-  send: 0.18.0
-  serve-static: 1.15.0
   serverless-http: 3.2.0
-  setprototypeof: 1.2.0
-  side-channel: 1.0.4
-  statuses: 2.0.1
-  toidentifier: 1.0.1
-  type-is: 1.6.18
-  unpipe: 1.0.0
-  utils-merge: 1.0.1
-  vary: 1.1.2
 
 devDependencies:
   serve: 12.0.1
-  serverless: 3.29.0_debug@4.3.4
+  serverless: 3.29.0
   serverless-offline: 12.0.4_serverless@3.29.0
   typescript: 5.0.2
 
@@ -1125,12 +1017,12 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@serverless/dashboard-plugin/6.2.3_wv4mirt23ko5fbq4th4krp64c4:
+  /@serverless/dashboard-plugin/6.2.3_supports-color@8.1.1:
     resolution: {integrity: sha512-iTZhpZbiVl6G2AyfgoqxemqqpG4pUceWys3GsyZtjimnfnGd2UFBOMVUMTavLhYia7lQc4kQVuXQ+afLlkg+pQ==}
     engines: {node: '>=12.0'}
     dependencies:
       '@serverless/event-mocks': 1.1.1
-      '@serverless/platform-client': 4.3.2_wv4mirt23ko5fbq4th4krp64c4
+      '@serverless/platform-client': 4.3.2_supports-color@8.1.1
       '@serverless/utils': 6.10.0
       child-process-ext: 2.1.1
       chokidar: 3.5.3
@@ -1164,13 +1056,13 @@ packages:
       lodash: 4.17.21
     dev: true
 
-  /@serverless/platform-client/4.3.2_wv4mirt23ko5fbq4th4krp64c4:
+  /@serverless/platform-client/4.3.2_supports-color@8.1.1:
     resolution: {integrity: sha512-DAa5Z0JAZc6UfrTZLYwqoZxgAponZpFwaqd7WzzMA+loMCkYWyJNwxrAmV6cr2UUJpkko4toPZuJ3vM9Ie+NDA==}
     engines: {node: '>=10.0'}
     dependencies:
       adm-zip: 0.5.10
       archiver: 5.3.1
-      axios: 0.21.4_debug@4.3.4
+      axios: 0.21.4
       fast-glob: 3.2.12
       https-proxy-agent: 5.0.1_supports-color@8.1.1
       ignore: 5.2.4
@@ -1511,18 +1403,18 @@ packages:
       xml2js: 0.4.19
     dev: true
 
-  /axios/0.21.4_debug@4.3.4:
+  /axios/0.21.4:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
     dependencies:
-      follow-redirects: 1.15.2_debug@4.3.4
+      follow-redirects: 1.15.2
     transitivePeerDependencies:
       - debug
     dev: true
 
-  /axios/1.3.4_debug@4.3.4:
+  /axios/1.3.4:
     resolution: {integrity: sha512-toYm+Bsyl6VC5wSkfkbbNB6ROv7KY93PEBBL6xyDczaIHasAiv4wPqQ/c4RjoQzipxRD2W5g21cOqQulZ7rHwQ==}
     dependencies:
-      follow-redirects: 1.15.2_debug@4.3.4
+      follow-redirects: 1.15.2
       form-data: 4.0.0
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -1575,26 +1467,6 @@ packages:
       on-finished: 2.4.1
       qs: 6.11.0
       raw-body: 2.5.1
-      type-is: 1.6.18
-      unpipe: 1.0.0
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
-  /body-parser/1.20.2:
-    resolution: {integrity: sha512-ml9pReCu3M61kGlqoTm2umSXTlRTuGTx0bfYj+uIUKKYycG5NtSbeetV3faSU6R7ajOPw0g/J1PvK4qNy7s5bA==}
-    engines: {node: '>= 0.8', npm: 1.2.8000 || >= 1.4.16}
-    dependencies:
-      bytes: 3.1.2
-      content-type: 1.0.5
-      debug: 2.6.9
-      depd: 2.0.0
-      destroy: 1.2.0
-      http-errors: 2.0.0
-      iconv-lite: 0.4.24
-      on-finished: 2.4.1
-      qs: 6.11.0
-      raw-body: 2.5.2
       type-is: 1.6.18
       unpipe: 1.0.0
     transitivePeerDependencies:
@@ -2088,6 +1960,7 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
+    dev: true
 
   /debug/4.3.4_supports-color@8.1.1:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
@@ -2687,7 +2560,7 @@ packages:
     hasBin: true
     dev: true
 
-  /follow-redirects/1.15.2_debug@4.3.4:
+  /follow-redirects/1.15.2:
     resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
     engines: {node: '>=4.0'}
     peerDependencies:
@@ -2695,8 +2568,6 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
-    dependencies:
-      debug: 4.3.4
 
   /for-each/0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
@@ -3686,6 +3557,7 @@ packages:
 
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
+    dev: true
 
   /ms/2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
@@ -4144,16 +4016,6 @@ packages:
       unpipe: 1.0.0
     dev: false
 
-  /raw-body/2.5.2:
-    resolution: {integrity: sha512-8zGqypfENjCIqGhgXToC8aB2r7YrBX+AQAfIPs/Mlk+BtPTztOvTS01NRW/3Eh60J+a48lt8qsCzirQ6loCVfA==}
-    engines: {node: '>= 0.8'}
-    dependencies:
-      bytes: 3.1.2
-      http-errors: 2.0.0
-      iconv-lite: 0.4.24
-      unpipe: 1.0.0
-    dev: false
-
   /rc/1.2.8:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
     hasBin: true
@@ -4429,7 +4291,7 @@ packages:
       object.hasown: 1.1.2
       p-memoize: 7.1.1
       p-retry: 5.1.2
-      serverless: 3.29.0_debug@4.3.4
+      serverless: 3.29.0
       velocityjs: 2.0.6
       ws: 8.13.0
     transitivePeerDependencies:
@@ -4440,14 +4302,14 @@ packages:
       - utf-8-validate
     dev: true
 
-  /serverless/3.29.0_debug@4.3.4:
+  /serverless/3.29.0:
     resolution: {integrity: sha512-sfX9sOsCIrNhevyhGu/tj3wfY/+hZf/edUBV80sYYXw8efo5+ZTtKOtXh3/NLFHpNaYrnxABgXTC+0F3IVnX3g==}
     engines: {node: '>=12.0'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@serverless/dashboard-plugin': 6.2.3_wv4mirt23ko5fbq4th4krp64c4
-      '@serverless/platform-client': 4.3.2_wv4mirt23ko5fbq4th4krp64c4
+      '@serverless/dashboard-plugin': 6.2.3_supports-color@8.1.1
+      '@serverless/platform-client': 4.3.2_supports-color@8.1.1
       '@serverless/utils': 6.10.0
       ajv: 8.12.0
       ajv-formats: 2.1.1_ajv@8.12.0
