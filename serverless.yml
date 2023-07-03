@@ -26,6 +26,8 @@ functions:
               - http://localhost:8081
               - https://studio.kapix.fr
               - https://studio-business.kapix.fr
+              - https://greenliving.fr
+              - https://www.greenliving.fr
             allowCredentials: false
 
 package:

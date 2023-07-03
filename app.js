@@ -2,21 +2,47 @@ const axios = require('axios');
 const cors = require('cors');
 const serverless = require('serverless-http');
 const express = require('express')
+require('dotenv').config()
 
 const app = express()
 
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
-const whitelist = [
+const WHITE_LIST = [
 	'http://localhost:8081',
 	'https://studio.kapix.fr',
-	'https://studio-business.kapix.fr'
+	'https://studio-business.kapix.fr',
+	'https://greenliving.fr',
+	'https://www.greenliving.fr'
 ]
+const BLACK_LIST_HEADERS = [
+	"host",
+	"origin",
+	"connection",
+	"cache-control",
+	"accept",
+	"upgrade-insecure-requests",
+	"user-agent",
+	"accept-encoding",
+	"accept-language"
+]
+
+const HEADERS_TO_PASS = [
+	'Content-type',
+	'Authorization',
+]
+
+const PRIVATE_API_KEYS_MAP = {
+	'kapix-brevo': [
+	 	process.env.KAPIX_BREVO_API_KEY
+	]
+}
+
 
 const corsOptions = {
   origin: function (origin, callback) {
-    if (whitelist.includes(origin)) {
+    if (WHITE_LIST.includes(origin)) {
       return callback(null, true)
     } else {
       return callback(new Error('Not allowed by CORS'))
@@ -29,18 +55,36 @@ app.use(cors(corsOptions))
 // 	origin: '*',
 // }))
 
-const headersToPass = [
-	'Content-type',
-	'Authorization',
-]
 
 function passHeaders (req) {
 	const headers = {}
-	headersToPass.forEach(h => {
+	HEADERS_TO_PASS.forEach(h => {
 		headers[h] = req.get(h)
 	})
+	Object.entries(req.headers).forEach(([name, value]) => {
+		if (!BLACK_LIST_HEADERS.includes(name.toLowerCase())) {
+			if (typeof value === 'string' && (value.startsWith('[') || value.endsWith(']'))) {
+				const apiKeyName = value.slice(1).slice(0, -1)
+				console.log(`${value}: ${apiKeyName}`)
+				const [newApiKeyName, newHeaderName] = apiKeyName.split('=>')
+				console.log(`${newApiKeyName}: ${newHeaderName}`)
+				const apiKeys = PRIVATE_API_KEYS_MAP[newApiKeyName]
+				if (apiKeys) {
+					const apiKey = apiKeys[Math.floor(Math.random() * apiKeys.length)]
+					console.log(`${newHeaderName || name} : ${apiKey}`)
+					headers[newHeaderName || name] = apiKeys[Math.floor(Math.random() * apiKeys.length)]
+				}
+			} else {
+				headers[name] = value
+			}
+		}
+	})
 	headers['Access-Control-Allow-Origin'] = '*'
+	headers['Access-Control-Allow-Crendentials'] = true
 	headers['Origin'] = 'https://studio.kapix.fr'
+	console.log(`origin: ${req.headers.origin}`)
+	console.log("new headers => ")
+	console.log(headers)
 	return {
 		headers
 	}

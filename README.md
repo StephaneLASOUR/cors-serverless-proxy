@@ -20,6 +20,8 @@ A simple serverless CORS reverse Proxy.
 
 Deploy to AWS / your server to access the Proxy. 
 
+serverless deploy
+
 ## Built With
 
 * NodeJS
