@@ -10,8 +10,8 @@ app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 const WHITE_LIST = [
-	'http://localhost:8081',
 	'https://studio.kapix.fr',
+	'http://localhost:8081',
 	'https://studio-business.kapix.fr',
 	'https://greenliving.fr',
 	'https://www.greenliving.fr'
@@ -29,8 +29,7 @@ const BLACK_LIST_HEADERS = [
 ]
 
 const HEADERS_TO_PASS = [
-	'Content-type',
-	'Authorization',
+	'Content-type'
 ]
 
 const PRIVATE_API_KEYS_MAP = {
@@ -42,7 +41,9 @@ const PRIVATE_API_KEYS_MAP = {
 
 const corsOptions = {
   origin: function (origin, callback) {
-    if (WHITE_LIST.includes(origin)) {
+		if (origin && ((origin.startsWith('https://kapix-beta-') ||  origin.startsWith('https://kapix-business-')) && origin.endsWith('.netlify.app'))) {
+			return callback(null, true)
+		} else if (WHITE_LIST.includes(origin)) {
       return callback(null, true)
     } else {
       return callback(new Error('Not allowed by CORS'))
