@@ -10,11 +10,11 @@ app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 const WHITE_LIST = [
-	'https://studio.kapix.fr',
 	'http://localhost:8081',
-	'https://studio-business.kapix.fr',
 	'https://greenliving.fr',
-	'https://www.greenliving.fr'
+	'https://www.greenliving.fr',
+	'https://storyjam.fr',
+	'kapix-studio-dashboard-vue3-staging.netlify.app'
 ]
 const BLACK_LIST_HEADERS = [
 	"host",
@@ -41,7 +41,12 @@ const PRIVATE_API_KEYS_MAP = {
 
 const corsOptions = {
   origin: function (origin, callback) {
-		if (origin && ((origin.startsWith('https://kapix-beta-') ||  origin.startsWith('https://kapix-business-')) && origin.endsWith('.netlify.app'))) {
+		if (origin && (
+			(
+				(origin.startsWith('https://kapix-beta-') || origin.startsWith('https://kapix-business-')) && origin.endsWith('.netlify.app')
+			) 
+			|| origin.endsWith('.kapix.fr')
+		)) {
 			return callback(null, true)
 		} else if (WHITE_LIST.includes(origin)) {
       return callback(null, true)
