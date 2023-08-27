@@ -14,7 +14,7 @@ const WHITE_LIST = [
 	'https://greenliving.fr',
 	'https://www.greenliving.fr',
 	'https://storyjam.fr',
-	'kapix-studio-dashboard-vue3-staging.netlify.app'
+	'https://kapix-studio-dashboard-vue3-staging.netlify.app'
 ]
 const BLACK_LIST_HEADERS = [
 	"host",
@@ -50,8 +50,8 @@ const corsOptions = {
 			return callback(null, true)
 		} else if (WHITE_LIST.includes(origin)) {
       return callback(null, true)
-    } else {
-      return callback(new Error('Not allowed by CORS'))
+    } else { 
+      return callback(new Error(`Not allowed by CORS : ${origin}`))
     }
   }
 }
