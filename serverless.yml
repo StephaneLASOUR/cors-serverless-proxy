@@ -1,3 +1,4 @@
+app: cors-proxy
 org: sparda
 service: cors-proxy
 configValidationMode: error

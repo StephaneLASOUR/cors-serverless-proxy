@@ -67,6 +67,7 @@ function passHeaders (req) {
 	HEADERS_TO_PASS.forEach(h => {
 		headers[h] = req.get(h)
 	})
+	
 	Object.entries(req.headers).forEach(([name, value]) => {
 		if (!BLACK_LIST_HEADERS.includes(name.toLowerCase())) {
 			if (typeof value === 'string' && (value.startsWith('[') || value.endsWith(']'))) {
@@ -85,9 +86,13 @@ function passHeaders (req) {
 			}
 		}
 	})
+	if(headers['Origin'] === 'https://www.aurimatrix.com') {
+		req.headers["Authorization"] = process.env.AURIMATRIX_BREVO_API_KEY
+	} else {
+		headers['Origin'] = 'https://studio.kapix.fr'
+	}
 	headers['Access-Control-Allow-Origin'] = '*'
 	headers['Access-Control-Allow-Crendentials'] = true
-	headers['Origin'] = 'https://studio.kapix.fr'
 	console.log(`origin: ${req.headers.origin}`)
 	console.log("new headers => ")
 	console.log(headers)
