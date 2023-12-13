@@ -14,6 +14,7 @@ const WHITE_LIST = [
 	'https://greenliving.fr',
 	'https://www.greenliving.fr',
 	'https://storyjam.fr',
+	'https://www.aurimatrix.com',
 	'https://kapix-studio-dashboard-vue3-staging.netlify.app'
 ]
 const BLACK_LIST_HEADERS = [
@@ -86,7 +87,7 @@ function passHeaders (req) {
 			}
 		}
 	})
-	if(headers['Origin'] === 'https://www.aurimatrix.com') {
+	if(headers['Origin'] && headers['Origin'].includes('www.aurimatrix.com')) {
 		req.headers["Authorization"] = process.env.AURIMATRIX_BREVO_API_KEY
 	} else {
 		headers['Origin'] = 'https://studio.kapix.fr'
@@ -101,7 +102,7 @@ function passHeaders (req) {
 	}
 }
 
-function printAxioError (error) {
+function printAxiosError (error) {
 	if ('The request was made and the server responded with a status code', error.response) {
 		// The request was made and the server responded with a status code
 		// that falls out of the range of 2xx
@@ -136,7 +137,7 @@ app.get('/proxy', async(req, res) => {
 	try {
 		result = await axios.get(url, passHeaders(req))
 	} catch (error) {
-		printAxioError(error)
+		printAxiosError(error)
 		res.status(400).send('BAD Request!')
 		return
 	}
@@ -162,7 +163,7 @@ app.post('/proxy', async(req, res) => {
 	try {
 		result = await axios.post(url, data, passHeaders(req))
 	} catch (error) {
-		printAxioError(error)
+		printAxiosError(error)
 		res.status(400).send('BAD Request!')
 		return
 	}
@@ -188,7 +189,7 @@ app.put('/proxy', async(req, res) => {
 	try {
 		result = await axios.put(url, data, passHeaders(req))
 	} catch (error) {
-		printAxioError(error)
+		printAxiosError(error)
 		res.status(400).send('BAD Request!')
 		return
 	}
@@ -213,7 +214,7 @@ app.delete('/proxy', async(req, res) => {
 	try {
 		result = await axios.delete(url, passHeaders(req))
 	} catch (error) {
-		printAxioError(error)
+		printAxiosError(error)
 		res.status(400).send('BAD Request!')
 		return
 	}
